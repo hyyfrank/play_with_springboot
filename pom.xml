@@ -51,16 +51,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<fork>true</fork>
-					<excludes>
-						<exclude>
-							<groupId>com.google.gwt</groupId>
-							<artifactId>gwt-user</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-
 			</plugin>
 		</plugins>
 	</build>
