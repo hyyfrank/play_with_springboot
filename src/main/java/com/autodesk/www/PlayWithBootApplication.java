@@ -9,6 +9,7 @@ public class PlayWithBootApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(PlayWithBootApplication.class, args);
+
 		System.out.println("started...");
 	}
 
