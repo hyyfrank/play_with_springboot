@@ -1,10 +1,11 @@
 package com.autodesk.www.controller;
 
+import com.autodesk.www.model.CustomizeConfigPojo;
 import com.autodesk.www.model.User;
 import com.autodesk.www.utils.JsonWrapResult;
-import org.springframework.stereotype.Controller;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
@@ -12,6 +13,9 @@ import java.util.Date;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+    @Autowired
+    private CustomizeConfigPojo customizeResources;
+
     @RequestMapping("/getUser")
     public User hello(){
         User user = new User();
@@ -24,8 +28,10 @@ public class UserController {
     }
     @RequestMapping("/getUserJson")
     public JsonWrapResult hallos(){
+        CustomizeConfigPojo bean = new CustomizeConfigPojo();
+        BeanUtils.copyProperties(customizeResources,bean);
         User user = new User();
-        user.setName("frank");
+        user.setName(bean.getCustomize_key1());
         user.setAge(19);
         user.setBirthday(new Date());
         user.setPassword("12345");

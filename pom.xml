@@ -13,6 +13,41 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>play_with_boot</name>
 	<description>Demo project for Spring Boot</description>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>dev</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>staging</id>
+			<properties>
+				<env>staging</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>preprod</id>
+			<properties>
+				<env>pre-prod</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env>prod</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<env>test</env>
+			</properties>
+		</profile>
+	</profiles>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -43,6 +78,11 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
