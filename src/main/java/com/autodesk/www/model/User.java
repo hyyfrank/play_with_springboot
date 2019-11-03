@@ -8,15 +8,8 @@ import java.util.Date;
 
 public class User {
     private String name;
-    @JsonIgnore
-    private String password;
-    private Integer age;
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss a",locale = "zh",timezone = "GMT+8")
-    private Date birthday;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String desc;
-
-
+    private int age;
+    private double money;
 
     public String getName() {
         return name;
@@ -26,36 +19,20 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public double getMoney() {
+        return money;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setMoney(double money) {
+        this.money = money;
     }
 }
 
