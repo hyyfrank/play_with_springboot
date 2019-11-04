@@ -10,7 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-public class PostController2 {
+public class PostController {
+
     @Autowired
     private PostService postService;
 
@@ -18,6 +19,7 @@ public class PostController2 {
     public String Test(){
         return "test correct.";
     }
+
     @RequestMapping("/query")
     public JsonWrapResult testQuery() {
         return JsonWrapResult.ok(postService.findPost(1L));

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @ConfigurationProperties(prefix = "frank.customize")
 @PropertySource(value="classpath:customize.properties")
-public class CustomizeConfigPojo {
+public class CusConfigPojo {
     private String customize_key1;
     private String customize_key2;
 

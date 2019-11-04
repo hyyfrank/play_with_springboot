@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.PostDao">
+<mapper namespace="com.autodesk.www.dao.PostDao">
 
-	<resultMap id="PostResultMap" type="com.example.demo.model.Post">
+	<resultMap id="PostResultMap" type="com.autodesk.www.model.Post">
         <id property="id" column="post_id"/>
         <result property="title" column="post_title"/>
         <result property="content" column="post_content"/>
@@ -33,7 +33,7 @@
         WHERE p.id = #{postId}
     </select>
 	
-	<update id="update" parameterType="com.example.demo.model.Post">
+	<update id="update" parameterType="com.autodesk.www.model.Post">
         UPDATE T_POST SET 
 	        title = #{title},
 	        content = #{content}
