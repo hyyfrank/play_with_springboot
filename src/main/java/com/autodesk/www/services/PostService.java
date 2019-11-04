@@ -1,5 +1,6 @@
 package com.autodesk.www.services;
 
+import java.util.List;
 import java.util.Map;
 
 import com.autodesk.www.model.Post;
@@ -14,6 +15,6 @@ public interface PostService {
 	
 	Map<String, Object> findPost(Long postId);
 	
-	Map<String, Object> findAllPosts();
+	List<Post> findAllPosts();
 	
 }

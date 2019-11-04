@@ -45,14 +45,8 @@ public class PostServiceImpl implements PostService {
 	}
 	
 	@Override
-	public Map<String, Object> findAllPosts() {
-		Map<String, Object> attributes = new HashMap<>();
-		List<Post> allPosts = this.postDao.findAll();
-		// all posts
-		attributes.put("posts", allPosts);
-		// provide a new data transfer object
-		attributes.put("postDto", new Post());
-		return attributes;
+	public List<Post> findAllPosts() {
+		return this.postDao.findAll();
 	}
 	
 }

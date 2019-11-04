@@ -1,30 +1,50 @@
 package com.autodesk.www.controller;
 
+import com.autodesk.www.model.Post;
 import com.autodesk.www.services.PostService;
 import com.autodesk.www.utils.JsonWrapResult;
+import com.fasterxml.jackson.databind.util.JSONWrappedObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.net.Inet4Address;
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/post")
 public class PostController {
 
     @Autowired
     private PostService postService;
 
-    @RequestMapping("/test")
-    public String Test(){
-        return "test correct.";
+    @PostMapping(path= "/add", consumes = "application/json", produces = "application/json")
+    public JsonWrapResult addEmployee(@RequestBody Post post) throws Exception {
+        this.postService.createPost(post);
+        return JsonWrapResult.ok(this.postService.findAllPosts());
     }
 
-    @RequestMapping("/query")
-    public JsonWrapResult testQuery() {
-        return JsonWrapResult.ok(postService.findPost(1L));
-
+    @RequestMapping(value = "/delete/{postId}", method = RequestMethod.DELETE)
+    public JsonWrapResult deletePost(@PathVariable("postId") Long postId) {
+        this.postService.deletePost(postId);
+        return JsonWrapResult.ok("Delete Successful.");
     }
+
+    @RequestMapping("/query/{id}")
+    public JsonWrapResult testQuery(@PathVariable Long id) {
+        return JsonWrapResult.ok(postService.findPost(id));
+    }
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public JsonWrapResult listAllPosts() {
+        List<Post> allPosts = this.postService.findAllPosts();
+       return JsonWrapResult.ok(allPosts);
+    }
+
+
+
+
+
 
 
 }
