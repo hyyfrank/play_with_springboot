@@ -17,8 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class PostServiceImpl implements PostService {
 
-	@Autowired
 	private PostDao postDao;
+
+	@Autowired
+	public PostServiceImpl(PostDao postDao){
+		this.postDao = postDao;
+	}
+
 
 	@Override
 	public void createPost(Post post) {

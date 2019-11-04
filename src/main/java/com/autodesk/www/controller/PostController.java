@@ -12,8 +12,12 @@ import java.util.List;
 @RequestMapping("/post")
 public class PostController {
 
-    @Autowired
     private PostService postService;
+
+    @Autowired
+    public PostController(PostService postService){
+        this.postService = postService;
+    }
 
     @PostMapping(path= "/add", consumes = "application/json", produces = "application/json")
     public JsonWrapResult addEmployee(@RequestBody Post post) throws Exception {
