@@ -13,3 +13,4 @@ maven的配置文件setting.xml加如下
 ```
 
 * maven version should stay old 3.5.4
+* constructor way instead of using autowire annotation on field
