@@ -31,6 +31,13 @@ public class PostController {
         return JsonWrapResult.ok("Delete Successful.");
     }
 
+    @PostMapping(path= "/update", consumes = "application/json", produces = "application/json")
+    public JsonWrapResult updateEmployee(@RequestBody Post post) throws Exception {
+        this.postService.updatePost(post);
+        return JsonWrapResult.ok(this.postService.findAllPosts());
+    }
+
+
     @RequestMapping("/query/{id}")
     public JsonWrapResult testQuery(@PathVariable Long id) {
         return JsonWrapResult.ok(postService.findPost(id));

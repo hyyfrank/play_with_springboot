@@ -33,7 +33,7 @@
         WHERE p.id = #{postId}
     </select>
 	
-	<update id="update" parameterType="com.autodesk.www.model.Post">
+	<update id="update">
         UPDATE T_POST SET 
 	        title = #{title},
 	        content = #{content}

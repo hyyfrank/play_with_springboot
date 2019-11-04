@@ -11,3 +11,5 @@ maven的配置文件setting.xml加如下
       <url>http://maven.aliyun.com/nexus/content/groups/public</url>
     </mirror>
 ```
+
+* maven version should stay old 3.5.4
