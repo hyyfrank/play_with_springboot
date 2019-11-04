@@ -3,14 +3,10 @@ package com.autodesk.www.controller;
 import com.autodesk.www.model.Post;
 import com.autodesk.www.services.PostService;
 import com.autodesk.www.utils.JsonWrapResult;
-import com.fasterxml.jackson.databind.util.JSONWrappedObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.Inet4Address;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/post")
@@ -37,11 +33,11 @@ public class PostController {
         return JsonWrapResult.ok(this.postService.findAllPosts());
     }
 
-
     @RequestMapping("/query/{id}")
     public JsonWrapResult testQuery(@PathVariable Long id) {
         return JsonWrapResult.ok(postService.findPost(id));
     }
+
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public JsonWrapResult listAllPosts() {
         List<Post> allPosts = this.postService.findAllPosts();
