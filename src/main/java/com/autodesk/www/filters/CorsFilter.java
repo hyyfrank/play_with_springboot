@@ -1,5 +1,7 @@
 package com.autodesk.www.filters;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -11,6 +13,8 @@ import java.io.IOException;
 
 @Component
 class CorsFilter extends OncePerRequestFilter {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     /**
      * Same contract as for {@code doFilter}, but guaranteed to be
      * just invoked once per request within a single request thread.
@@ -30,6 +34,7 @@ class CorsFilter extends OncePerRequestFilter {
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "authorization, content-type, xsrf-token");
         response.addHeader("Access-Control-Expose-Headers", "xsrf-token");
+        logger.info("GO THROUGTH THE CROS FILTER");
         if ("OPTIONS".equals(request.getMethod())) {
             response.setStatus(HttpServletResponse.SC_OK);
         } else {
