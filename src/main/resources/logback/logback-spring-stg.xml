@@ -28,9 +28,9 @@
     </root>
 
     <!-- logback为java中的包 -->
-    <logger name="com.dudu.controller"/>
+    <logger name="com.autodesk.www.controller"/>
     <!--logback.LogbackDemo：类的全路径 -->
-    <logger name="com.autodesk.www.controller.PostController" level="WARN" additivity="false">
-        <appender-ref ref="console"/>
-    </logger>
+<!--    <logger name="com.autodesk.www.controller.PostController" level="WARN" additivity="false">-->
+<!--        <appender-ref ref="console"/>-->
+<!--    </logger>-->
 </configuration>
