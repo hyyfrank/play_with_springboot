@@ -1,6 +1,5 @@
-* add cros filter（global way in restful?）
-* oauth filter
-* security filter
-* exception filter
-* Logging filter
-* logger
+* add cros filter（global way in restful）[supported]
+* add logback support in springboot[]
+* oauth filter[pending...]
+* security filter[pending...]
+* exception filter[pending...]
