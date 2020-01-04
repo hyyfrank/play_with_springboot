@@ -8,9 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.autodesk.www.dao")
 public class PlayWithBootApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PlayWithBootApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(PlayWithBootApplication.class, args);
+  }
 }
-
-

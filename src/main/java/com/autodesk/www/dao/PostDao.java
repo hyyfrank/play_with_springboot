@@ -1,22 +1,20 @@
 package com.autodesk.www.dao;
 
 import com.autodesk.www.model.Post;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 @Mapper
 public interface PostDao {
-        void save(Post post);
+  void save(Post post);
 
-        void delete(Long postId);
+  void delete(Long postId);
 
-        void update(Post post);
+  void update(Post post);
 
-        Post find(Long postId);
+  Post find(Long postId);
 
-        List<Post> findAll();
+  List<Post> findAll();
 }
-
